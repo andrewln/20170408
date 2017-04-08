@@ -1,6 +1,6 @@
 ---
 - hosts: all
-  become: yes  
+  become: yes
   roles:
     - nginx
   tasks:
@@ -10,4 +10,6 @@
     - name: Deploy Flask application
       synchronize: src=../../myproject dest=/opt/absolute
 
+- hosts: all
+  tasks:
     - include: tasks/startup.yml

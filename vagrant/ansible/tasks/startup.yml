@@ -1,5 +1,5 @@
 ---
 - name: Environment Variable of Flask_APP
-  shell: flask run --host=0.0.0.0 | tee -a /opt/absolute/myproject/hello.log &
-  environment:
-    FLASK_APP: /opt/absolute/myproject/hello.py
+  shell: "export FLASK_APP=/opt/absolute/myproject/hello.py;flask run --host=0.0.0.0 >/dev/null 2>&1 &"
+  async: 10
+  poll: 0
