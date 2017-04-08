@@ -1,6 +1,11 @@
 ---
 - hosts: all
   become: yes
-  tasks:
+  pre_tasks:
     - include: tasks/nginx.yml
     - include: tasks/flask.yml
+  tasks:
+    - name: make sure path exists to install flask application
+      file: path=/opt/absolute state=directory
+    - name: Deploy Flask application
+      synchronize: src=../../myproject dest=/opt/absolute
