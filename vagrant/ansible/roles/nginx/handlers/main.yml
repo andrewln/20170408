@@ -1,0 +1,3 @@
+---
+- name: reload ngnix
+  service: name=ngnix state=reloaded

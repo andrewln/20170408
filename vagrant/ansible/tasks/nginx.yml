@@ -1,2 +1,0 @@
-- name: Installing NGINX
-  apt: name=nginx state=present

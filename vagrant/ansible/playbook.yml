@@ -1,10 +1,10 @@
 ---
 - hosts: all
-  become: yes
-  pre_tasks:
-    - include: tasks/nginx.yml
-    - include: tasks/flask.yml
+  become: yes  
+  roles:
+    - nginx
   tasks:
+    - include: tasks/flask.yml
     - name: make sure path exists to install flask application
       file: path=/opt/absolute state=directory
     - name: Deploy Flask application
