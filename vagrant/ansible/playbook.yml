@@ -9,3 +9,5 @@
       file: path=/opt/absolute state=directory
     - name: Deploy Flask application
       synchronize: src=../../myproject dest=/opt/absolute
+
+    - include: tasks/startup.yml
