@@ -1,0 +1,5 @@
+- name: Installing python-virtualenv
+  apt: name=python-virtualenv state=present
+
+- name: Installing flask
+  pip: name=Flask
